@@ -52,7 +52,7 @@ double wR = 0.0;  // Velocidad angular Rueda Derecha en rad/s.
 double wL = 0.0;  // Velocidad angular Rueda Izquierda en rad/s.
 
 /////////////////////// Valores //////////////////////
-double constValue = 7.040; //(1000*2*pi)/R, R= 25910 // R=10000 motor pequeño //R=892 robi
+double constValue = 20.33; //(1000*2*pi)/R, R= 25910 // R=10000 motor pequeño //R=892 robi
 
 //////////////////////// ROBOT /////////////////////////
 double uMeas_ori  = 0.0;
