@@ -57,7 +57,7 @@ void setup()
 {
   Serial.begin(9600);
 
-  motor.setGains(0.25, 0.1, 0.05); // (Kc,Ti,Td) 0.55, 0.10, 0.05
+  motor.setGains(0.23, 0.1, 0.05); // (Kc,Ti,Td) 0.55, 0.10, 0.05   0.25, 0.1, 0.05
   /*
   -Aumentando Kc disminuye la estabilidad
   -El error decae mas rapido si se disminuye el Ti
