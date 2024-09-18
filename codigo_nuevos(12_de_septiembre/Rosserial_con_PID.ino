@@ -52,7 +52,7 @@ unsigned long sampleTime = 30;  // Tiempo de muestreo
 long currentMillis = 0;
 
 ///// VALORES PARA CALCULAR ODOMETRIA /////
-const double R = 0.24; // radio de la llanta
+const double R = 0.0335; // radio de la llanta
 const double d = 0.25; // Distancia entre llantas
 
 /// VARIABLE PARA RECIBOR TOPICO CMD_VEL ///
@@ -103,16 +103,12 @@ void mover (){
       anticlockwise(in1, in2, ena, cvDerecho);
     } else if (cvDerecho < 0) {
       clockwise(in1, in2, ena, abs(cvDerecho));
-    }else if (cvDerecho==0) {
-      stop(in1, in2);
     }
     
     if (cvIzquierdo > 0) {
       anticlockwise(in3, in4, enb, cvIzquierdo);
-    } else if (cvIzquierdo < 0) {
+    } else  {
       clockwise(in3, in4, enb, abs(cvIzquierdo));
-    }else if (cvIzquierdo==0) {
-      stop(in3, in4);
     }
     
 }
@@ -133,11 +129,11 @@ void setup()
   -Aumentando Td mejora la estabilidad
   */
   ///// LIMITES DE LA PV(W [rad/s] y CV(PWM))
-  motorR.setCvLimits(255,20);
-  motorR.setPvLimits(30,0);
+  motorR.setCvLimits(80,20);
+  motorR.setPvLimits(20,0);
 
-  motorL.setCvLimits(255,20); 
-  motorL.setPvLimits(30,0);
+  motorL.setCvLimits(80,20); 
+  motorL.setPvLimits(20,0);
   /////// DEFINICION DE LOS MODOS DE LOS PINES //////
   // Pines de los Encoder derecho
   pinMode(Amarillo_Derecho, INPUT);
