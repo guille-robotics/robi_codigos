@@ -1,0 +1,6 @@
+<launch>
+  <node name="ekf_localization_node" pkg="robot_localization" type="ekf_localization_node" output="screen">
+    <param name="config" value="$(find robot_mpu6050)/config/robot_localization.yaml"/>
+  </node>
+</launch>
+

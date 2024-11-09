@@ -1,0 +1,17 @@
+<launch>
+    <!-- Lanzar rosserial para comunicación con Arduino -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/arduino"/>
+        <param name="baud" value="115200"/>
+    </node>
+
+    <!-- Lanzar el nodo de teleop_twist_keyboard -->
+    <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+    
+    <!-- Lanzar el nodo de odometría -->
+    <node name="ekf_odom_pub" pkg="robot_odometria" type="ekf_odom_pub" output="screen" />
+
+    <!-- Lanzar el archivo display.launch de robot_cuerpo -->
+    <include file="$(find robot_cuerpo)/launch/display.launch" />
+</launch>
+
