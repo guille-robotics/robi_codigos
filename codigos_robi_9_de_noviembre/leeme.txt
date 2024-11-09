@@ -1,0 +1,1 @@
+Esta carpeta contiene los ultimos codigo que estaban en el robi, estos codigos funcionan de manera correcta la publicacion de odometria y movimiento en el robot y rviz
